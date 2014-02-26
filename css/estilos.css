@@ -1,0 +1,13 @@
+/* estilos.css */
+#fondo{
+	width:800px;
+	height:800px;
+	background: url('../img/PuntasAbiertas.jpg');
+}
+#slider{
+	width:750px;
+	height:200px;
+	position: relative;
+	top: 90px;
+	margin:	0 auto;
+}
