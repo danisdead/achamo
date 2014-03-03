@@ -8,6 +8,19 @@
 	width:750px;
 	height:200px;
 	position: relative;
-	top: 90px;
+	top: 70px;
 	margin:	0 auto;
+}
+#mydiv{
+	position: relative;
+	top: 73px;
+}
+#carousel{
+	height: 400px;
+	width: 800px;
+	overflow: hidden;
+	position: relative;
+	left: -27px;
+	top: -71px;
+	border: none;
 }

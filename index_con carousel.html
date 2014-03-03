@@ -1,0 +1,247 @@
+<html>
+
+	<head>
+		<link rel="stylesheet" type="text/css" href="css/estilos.css" />
+		<link href='http://fonts.googleapis.com/css?family=Roboto:400,300,700' rel='stylesheet' type='text/css'>
+		<!-- Imports required for the css and js files -->
+		<link rel="stylesheet" type="text/css" href="load/skin_allsizes_white.css"/>
+		<script type="text/javascript" src="java/FWDSimple3DCoverflow.js"></script>
+		<!-- Setup the coverflow (all settings are explained in detail in the documentation files) -->
+		<script type="text/javascript">
+			FWDUtils.onReady(function(){
+				var coverflow = new FWDSimple3DCoverflow({
+					//required settings
+					coverflowHolderDivId:"myDiv",
+					coverflowDataListDivId:"coverflowData",
+					displayType:"responsive",
+					autoScale:"no",
+					coverflowWidth:800,
+					coverflowHeight:240,
+					skinPath:"load/skin_white",
+					
+					//main settings
+					backgroundColor:"",
+					backgroundImagePath:"",
+					backgroundRepeat:"repeat-x",
+					showDisplay2DAlways:"no",
+					coverflowStartPosition:"center",
+					coverflowTopology:"dualsided",
+					coverflowXRotation:0,
+					coverflowYRotation:0,
+					numberOfThumbnailsToDisplayLeftAndRight:"all",
+					showContextMenu:"no",
+												
+					//thumbnail settings
+					thumbnailWidth:200,
+					thumbnailHeight:260,
+					thumbnailXOffset3D:80,
+					thumbnailXSpace3D:80, //Espacio entre thumbnails
+					thumbnailZOffset3D:400, //Zoom thumbnails (menos es más)
+					thumbnailZSpace3D:0,
+					thumbnailYAngle3D:70,
+					thumbnailXOffset2D:20,
+					thumbnailXSpace2D:30,
+					thumbnailHoverOffset:100,
+					thumbnailBorderSize:0,
+					thumbnailBackgroundColor:"#083E7C",
+					thumbnailBorderColor1:"#FFFFFF",
+					thumbnailBorderColor2:"#FFFFFF",
+					transparentImages:"no",
+					thumbnailsAlignment:"bottom",
+					maxNumberOfThumbnailsOnMobile:13,
+					showThumbnailsGradient:"yes",
+					thumbnailGradientDirection:"left",
+					thumbnailGradientColor1:"rgba(255, 255, 255, 0.5)",
+					thumbnailGradientColor2:"rgba(255, 255, 255, 0)",
+					showText:"no",
+					textOffset:10,
+					showThumbnailBoxShadow:"yes",
+					thumbnailBoxShadowCss:"0px 2px 2px #BBBBBB",
+					showTooltip:"yes",
+					dynamicTooltip:"yes",
+					showReflection:"yes",
+					reflectionHeight:10,
+					reflectionDistance:0,
+					reflectionOpacity:.2,
+												
+					//controls settings
+					slideshowDelay:5000,
+					autoplay:"no",
+					disableNextAndPrevButtonsOnMobile:"no",
+					controlsMaxWidth:100,
+					slideshowTimerColor:"#FFFFFF",
+					controlsPosition:"bottom",
+					controlsOffset:15,
+					showPrevButton:"no",
+					showNextButton:"no",
+					showSlideshowButton:"no",
+					showScrollbar:"no",
+					disableScrollbarOnMobile:"yes",
+					enableMouseWheelScroll:"yes",
+					scrollbarHandlerWidth:200,
+					scrollbarTextColorNormal:"#000000",
+					scrollbarTextColorSelected:"#FFFFFF",
+					addKeyboardSupport:"yes",
+												
+					//categories settings
+					showCategoriesMenu:"no",
+					startAtCategory:1,
+					categoriesMenuMaxWidth:700,
+					categoriesMenuOffset:25,
+					categoryColorNormal:"#999999",
+					categoryColorSelected:"#000000",
+												
+					//lightbox settings
+					addLightBoxKeyboardSupport:"yes",
+					showLightBoxNextAndPrevButtons:"yes",
+					showLightBoxZoomButton:"yes",
+					showLightBoxInfoButton:"no",
+					showLighBoxSlideShowButton:"yes",
+					showLightBoxInfoWindowByDefault:"no",
+					slideShowAutoPlay:"no",
+					lightBoxVideoAutoPlay:"yes",
+					lightBoxBackgroundColor:"#000000",
+					lightBoxInfoWindowBackgroundColor:"#FFFFFF",
+					lightBoxItemBorderColor1:"#fcfdfd",
+					lightBoxItemBorderColor2:"#e4FFe4",
+					lightBoxItemBackgroundColor:"#333333",
+					lightBoxMainBackgroundOpacity:.8,
+					lightBoxInfoWindowBackgroundOpacity:.9,
+					lightBoxBorderSize:0,
+					lightBoxBorderRadius:0,
+					lightBoxSlideShowDelay:4
+				});
+			});
+		</script>
+	</head>
+
+	<body>
+		<div id="fondo">
+		<div id="slider">
+			<!-- div used as a holder for the coverflow -->
+			<div id="myDiv"></div>
+			<!-- coverflow data -->
+
+		<ul id="coverflowData" style="display: none;">
+			
+			<!-- category  -->
+			<ul data-cat="Dove">
+				<ul>
+					<!-- Lightbox -->
+					<li data-type="media" data-width="640" data-height="420" data-url="http://www.youtube.com/watch?v=89rnIwCURC8"></li>
+					<li data-thumbnail-path="load/thumbnails/6.jpg" data-thumbnail-width="280" data-thumbnail-height="180"></li>
+					<li data-thumbnail-text="">
+						 <!-- Lightbox text
+						<p class="largeLabel">VIMEO AND YOUTUBE SUPPORT</p>
+						<p class="smallLabel">The coverflow lightbox can load and play videos from youtube or vimeo easily.</p>-->
+					</li>
+					<li data-info="">
+						<p class="mediaDescriptionHeader">VIMEO AND YOUTUBE SUPPORT.</p>
+						<p class="mediaDescriptionText">All you have to do is to include the link from YouTube or Vimeo video that you want to display and the lightbox will display and play your video. The size (width and height) of each video can be set easily.</p>
+					</li>
+				</ul>
+				<ul>
+					<li data-type="media" data-width="640" data-height="420" data-url="http://www.youtube.com/watch?v=89rnIwCURC8"></li>
+					<li data-thumbnail-path="load/thumbnails/7.jpg" data-thumbnail-width="280" data-thumbnail-height="180"></li>
+					<li data-thumbnail-text="">
+						<!--<p class="largeLabel">VIMEO AND YOUTUBE SUPPORT</p>
+						<p class="smallLabel">The coverflow lightbox can load and play videos from youtube or vimeo easily.</p>-->
+					</li>
+					<li data-info="">
+						<p class="mediaDescriptionHeader">VIMEO AND YOUTUBE SUPPORT.</p>
+						<p class="mediaDescriptionText">All you have to do is to include the link from YouTube or Vimeo video that you want to display and the lightbox will display and play your video. The size (width and height) of each video can be set easily.</p>
+					</li>
+				</ul>
+				<ul>
+					<li data-type="media" data-width="640" data-height="420" data-url="http://www.youtube.com/watch?v=89rnIwCURC8"></li>
+					<li data-thumbnail-path="load/thumbnails/7.jpg" data-thumbnail-width="280" data-thumbnail-height="180"></li>
+					<li data-thumbnail-text="">
+						<!--<p class="largeLabel">VIMEO AND YOUTUBE SUPPORT</p>
+						<p class="smallLabel">The coverflow lightbox can load and play videos from youtube or vimeo easily.</p>-->
+					</li>
+					<li data-info="">
+						<p class="mediaDescriptionHeader">VIMEO AND YOUTUBE SUPPORT.</p>
+						<p class="mediaDescriptionText">All you have to do is to include the link from YouTube or Vimeo video that you want to display and the lightbox will display and play your video. The size (width and height) of each video can be set easily.</p>
+					</li>
+				</ul>
+				<ul>
+					<li data-type="media" data-width="640" data-height="420" data-url="http://www.youtube.com/watch?v=89rnIwCURC8"></li>
+					<li data-thumbnail-path="load/thumbnails/7.jpg" data-thumbnail-width="280" data-thumbnail-height="180"></li>
+					<li data-thumbnail-text="">
+						<<!--p class="largeLabel">VIMEO AND YOUTUBE SUPPORT</p>
+						<p class="smallLabel">The coverflow lightbox can load and play videos from youtube or vimeo easily.</p>-->
+					</li>
+					<li data-info="">
+						<p class="mediaDescriptionHeader">VIMEO AND YOUTUBE SUPPORT.</p>
+						<p class="mediaDescriptionText">All you have to do is to include the link from YouTube or Vimeo video that you want to display and the lightbox will display and play your video. The size (width and height) of each video can be set easily.</p>
+					</li>
+				</ul>
+				<ul>
+					<li data-type="media" data-width="640" data-height="420" data-url="http://www.youtube.com/watch?v=89rnIwCURC8"></li>
+					<li data-thumbnail-path="load/thumbnails/7.jpg" data-thumbnail-width="280" data-thumbnail-height="180"></li>
+					<li data-thumbnail-text="">
+						<!--<p class="largeLabel">VIMEO AND YOUTUBE SUPPORT</p>
+						<p class="smallLabel">The coverflow lightbox can load and play videos from youtube or vimeo easily.</p>-->
+					</li>
+					<li data-info="">
+						<p class="mediaDescriptionHeader">VIMEO AND YOUTUBE SUPPORT.</p>
+						<p class="mediaDescriptionText">All you have to do is to include the link from YouTube or Vimeo video that you want to display and the lightbox will display and play your video. The size (width and height) of each video can be set easily.</p>
+					</li>
+				</ul>
+				<ul>
+					<li data-type="media" data-width="640" data-height="420" data-url="http://www.youtube.com/watch?v=89rnIwCURC8"></li>
+					<li data-thumbnail-path="load/thumbnails/7.jpg" data-thumbnail-width="280" data-thumbnail-height="180"></li>
+					<li data-thumbnail-text="">
+						<!--<p class="largeLabel">VIMEO AND YOUTUBE SUPPORT</p>
+						<p class="smallLabel">The coverflow lightbox can load and play videos from youtube or vimeo easily.</p>-->
+					</li>
+					<li data-info="">
+						<p class="mediaDescriptionHeader">VIMEO AND YOUTUBE SUPPORT.</p>
+						<p class="mediaDescriptionText">All you have to do is to include the link from YouTube or Vimeo video that you want to display and the lightbox will display and play your video. The size (width and height) of each video can be set easily.</p>
+					</li>
+				</ul>
+				<ul>
+					<li data-type="media" data-width="640" data-height="420" data-url="http://www.youtube.com/watch?v=89rnIwCURC8"></li>
+					<li data-thumbnail-path="load/thumbnails/7.jpg" data-thumbnail-width="280" data-thumbnail-height="180"></li>
+					<li data-thumbnail-text="">
+						<!--<p class="largeLabel">VIMEO AND YOUTUBE SUPPORT</p>
+						<p class="smallLabel">The coverflow lightbox can load and play videos from youtube or vimeo easily.</p>-->
+					</li>
+					<li data-info="">
+						<p class="mediaDescriptionHeader">VIMEO AND YOUTUBE SUPPORT.</p>
+						<p class="mediaDescriptionText">All you have to do is to include the link from YouTube or Vimeo video that you want to display and the lightbox will display and play your video. The size (width and height) of each video can be set easily.</p>
+					</li>
+				</ul>
+				<ul>
+					<li data-type="media" data-width="640" data-height="420" data-url="http://www.youtube.com/watch?v=89rnIwCURC8"></li>
+					<li data-thumbnail-path="load/thumbnails/7.jpg" data-thumbnail-width="280" data-thumbnail-height="180"></li>
+					<li data-thumbnail-text="">
+						<!--<p class="largeLabel">VIMEO AND YOUTUBE SUPPORT</p>
+						<p class="smallLabel">The coverflow lightbox can load and play videos from youtube or vimeo easily.</p>-->
+					</li>
+					<li data-info="">
+						<p class="mediaDescriptionHeader">VIMEO AND YOUTUBE SUPPORT.</p>
+						<p class="mediaDescriptionText">All you have to do is to include the link from YouTube or Vimeo video that you want to display and the lightbox will display and play your video. The size (width and height) of each video can be set easily.</p>
+					</li>
+				</ul>
+				<ul>
+					<li data-type="media" data-width="640" data-height="420" data-url="http://www.youtube.com/watch?v=89rnIwCURC8"></li>
+					<li data-thumbnail-path="load/thumbnails/7.jpg" data-thumbnail-width="280" data-thumbnail-height="180"></li>
+					<li data-thumbnail-text="">
+						<!--<p class="largeLabel">VIMEO AND YOUTUBE SUPPORT</p>
+						<p class="smallLabel">The coverflow lightbox can load and play videos from youtube or vimeo easily.</p>-->
+					</li>
+					<li data-info="">
+						<p class="mediaDescriptionHeader">VIMEO AND YOUTUBE SUPPORT.</p>
+						<p class="mediaDescriptionText">All you have to do is to include the link from YouTube or Vimeo video that you want to display and the lightbox will display and play your video. The size (width and height) of each video can be set easily.</p>
+					</li>
+				</ul>
+				
+			</ul>
+			<!-- end  -->
+			
+			</div>
+		</div>
+	</body>
+
+</html>
