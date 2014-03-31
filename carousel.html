@@ -1,227 +1,116 @@
 <!DOCTYPE html>
 <html>
-
-
-
 	<head>
-
+		<title>Dove</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<link rel="stylesheet" type="text/css" href="css/estilos.css" />
-
 		<link href='https://fonts.googleapis.com/css?family=Roboto:400,300,700' rel='stylesheet' type='text/css'>
-
 		<!-- Imports required for the css and js files -->
-
 		<link rel="stylesheet" type="text/css" href="load/skin_allsizes_white.css"/>
-
 		<script type="text/javascript" src="java/FWDSimple3DCoverflow.js"></script>
-		<script type="text/javascript" src="java/jquery-2.0.0.min.js"></script>
-
 		<!-- Setup the coverflow (all settings are explained in detail in the documentation files) -->
-
 		<script type="text/javascript">
-
 			FWDUtils.onReady(function(){
-
 				var coverflow = new FWDSimple3DCoverflow({
-
 					//required settings
-
 					coverflowHolderDivId:"myDiv",
-
 					coverflowDataListDivId:"coverflowData",
-
 					displayType:"responsive",
-
 					autoScale:"no",
-
 					coverflowWidth:800,
-
 					coverflowHeight:240,
-
 					skinPath:"load/skin_white",
 
-					
-
 					//main settings
-
 					backgroundColor:"",
-
 					backgroundImagePath:"",
-
 					backgroundRepeat:"repeat-x",
-
 					showDisplay2DAlways:"no",
-
 					coverflowStartPosition:"center",
-
 					coverflowTopology:"dualsided",
-
 					coverflowXRotation:0,
-
 					coverflowYRotation:0,
-
 					numberOfThumbnailsToDisplayLeftAndRight:"all",
-
 					showContextMenu:"no",
 
-												
-
 					//thumbnail settings
-
 					thumbnailWidth:200,
-
 					thumbnailHeight:260,
-
 					thumbnailXOffset3D:80,
-
 					thumbnailXSpace3D:80, //Espacio entre thumbnails
-
 					thumbnailZOffset3D:400, //Zoom thumbnails (menos es más)
-
 					thumbnailZSpace3D:0,
-
 					thumbnailYAngle3D:70,
-
 					thumbnailXOffset2D:20,
-
 					thumbnailXSpace2D:30,
-
 					thumbnailHoverOffset:100,
-
 					thumbnailBorderSize:0,
-
 					thumbnailBackgroundColor:"#083E7C",
-
 					thumbnailBorderColor1:"#FFFFFF",
-
 					thumbnailBorderColor2:"#FFFFFF",
-
 					transparentImages:"no",
-
 					thumbnailsAlignment:"bottom",
-
 					maxNumberOfThumbnailsOnMobile:13,
-
 					showThumbnailsGradient:"yes",
-
 					thumbnailGradientDirection:"left",
-
-					thumbnailGradientColor1:"rgba(255, 255, 255, 0.5)",
-
+					thumbnailGradientColor1:"rgba(255, 255, 255, 0.3)",
 					thumbnailGradientColor2:"rgba(255, 255, 255, 0)",
-
 					showText:"no",
-
 					textOffset:10,
-
 					showThumbnailBoxShadow:"yes",
-
 					thumbnailBoxShadowCss:"0px 2px 2px #BBBBBB",
-
-					showTooltip:"yes",
-
+					showTooltip:"no", //IE No acepta un "yes"
 					dynamicTooltip:"yes",
-
 					showReflection:"yes",
-
 					reflectionHeight:10,
-
 					reflectionDistance:0,
-
 					reflectionOpacity:.1,
 
-												
-
 					//controls settings
-
 					slideshowDelay:3000,
-
 					autoplay:"yes",
-
 					disableNextAndPrevButtonsOnMobile:"no",
-
 					controlsMaxWidth:100,
-
 					slideshowTimerColor:"#FFFFFF",
-
 					controlsPosition:"bottom",
-
 					controlsOffset:15,
-
 					showPrevButton:"no",
-
 					showNextButton:"no",
-
 					showSlideshowButton:"yes",
-
 					showScrollbar:"no",
-
 					disableScrollbarOnMobile:"yes",
-
 					enableMouseWheelScroll:"yes",
-
 					scrollbarHandlerWidth:200,
-
 					scrollbarTextColorNormal:"#000000",
-
 					scrollbarTextColorSelected:"#FFFFFF",
-
 					addKeyboardSupport:"yes",
 
-												
-
 					//categories settings
-
 					showCategoriesMenu:"no",
-
 					startAtCategory:1,
-
 					categoriesMenuMaxWidth:700,
-
 					categoriesMenuOffset:25,
-
 					categoryColorNormal:"#999999",
-
 					categoryColorSelected:"#000000",
 
-												
-
 					//lightbox settings
-
 					addLightBoxKeyboardSupport:"yes",
-
 					showLightBoxNextAndPrevButtons:"yes",
-
 					showLightBoxZoomButton:"yes",
-
 					showLightBoxInfoButton:"no",
-
 					showLighBoxSlideShowButton:"yes",
-
 					showLightBoxInfoWindowByDefault:"no",
-
 					slideShowAutoPlay:"no",
-
 					lightBoxVideoAutoPlay:"yes",
-
-					lightBoxBackgroundColor:"",
-
+					lightBoxBackgroundColor:"transparent",
 					lightBoxInfoWindowBackgroundColor:"#FFFFFF",
-
 					lightBoxItemBorderColor1:"#fcfdfd",
-
 					lightBoxItemBorderColor2:"#e4FFe4",
-
 					lightBoxItemBackgroundColor:"#333333", //video
-
 					lightBoxMainBackgroundOpacity:.8,
-
 					lightBoxInfoWindowBackgroundOpacity:.9,
-
 					lightBoxBorderSize:0,
-
 					lightBoxBorderRadius:0,
-
 					lightBoxSlideShowDelay:4
 
 				});
@@ -230,16 +119,6 @@
 
 		</script>
 	</head>
-	<script>
-			/*$(document).ready(function(){
-				$('#slider').on('mouseout',function(){
-					$('#fondo').on("click",function(){
-						$('#fondo').fadeOut('slow');
-					});
-				}); 
-			});*/
-	</script>
-
 
 	<body>
 

@@ -21,7 +21,8 @@
 	overflow: hidden;
 	position: relative;
 	left: -27px;
-	top: -71px;
+	/*top: -71px;*/
+	top:-5px;
 	border: none;
 }
 .foto{

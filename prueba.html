@@ -1,27 +1,32 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Simple 3D Coverflow</title>
+		<title>Simple 3D Coverflow API Test</title>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<!-- Imports required for the css and js files -->
+		<link rel="stylesheet" type="text/css" href="css/estilos.css" />
+		<!--<link rel="stylesheet" type="text/css" href="load/skin_classic_black.css"/>-->
 		<link rel="stylesheet" type="text/css" href="load/skin_allsizes_white.css"/>
 		<script type="text/javascript" src="java/FWDSimple3DCoverflow.js"></script>
-		
 		<!-- Setup the coverflow (all settings are explained in detail in the documentation files) -->
 		<script type="text/javascript">
-			FWDUtils.onReady(function(){
-				var coverflow = new FWDSimple3DCoverflow({
+			var coverflow;
+			
+			FWDUtils.onReady(function()
+			{
+				coverflow = new FWDSimple3DCoverflow(
+				{
 					//required settings
 					coverflowHolderDivId:"myDiv",
 					coverflowDataListDivId:"coverflowData",
-					displayType:"responsive",
+					displayType:"fluidwidth",
 					autoScale:"no",
-					coverflowWidth:940,
-					coverflowHeight:538,
+					coverflowWidth:800,
+					coverflowHeight:240,
 					skinPath:"load/skin_white",
 					
 					//main settings
-					backgroundColor:"#FFFFFF",
+					backgroundColor:"", //ok
 					backgroundImagePath:"",
 					backgroundRepeat:"repeat-x",
 					showDisplay2DAlways:"no",
@@ -35,16 +40,16 @@
 					//thumbnail settings
 					thumbnailWidth:400,
 					thumbnailHeight:266,
-					thumbnailXOffset3D:80,
-					thumbnailXSpace3D:80,
-					thumbnailZOffset3D:400,
-					thumbnailZSpace3D:0,
+					thumbnailXOffset3D:86,
+					thumbnailXSpace3D:78,
+					thumbnailZOffset3D:200,
+					thumbnailZSpace3D:93,
 					thumbnailYAngle3D:70,
 					thumbnailXOffset2D:20,
 					thumbnailXSpace2D:30,
 					thumbnailHoverOffset:100,
 					thumbnailBorderSize:0,
-					thumbnailBackgroundColor:"#999999",
+					thumbnailBackgroundColor:"#FFFFFF",
 					thumbnailBorderColor1:"#FFFFFF",
 					thumbnailBorderColor2:"#FFFFFF",
 					transparentImages:"no",
@@ -52,18 +57,18 @@
 					maxNumberOfThumbnailsOnMobile:13,
 					showThumbnailsGradient:"yes",
 					thumbnailGradientDirection:"left",
-					thumbnailGradientColor1:"rgba(255, 255, 255, 0)",
-					thumbnailGradientColor2:"rgba(255, 255, 255, 1)",
-					showText:"no",
+					thumbnailGradientColor1:"rgba(0, 0, 0, 0)",
+					thumbnailGradientColor2:"rgba(0, 0, 0, 1)",
+					showText:"no", //ok
 					textOffset:10,
 					showThumbnailBoxShadow:"yes",
-					thumbnailBoxShadowCss:"0px 2px 2px #BBBBBB",
-					showTooltip:"yes",
+					thumbnailBoxShadowCss:"0px 2px 2px #111111",
+					showTooltip:"no",
 					dynamicTooltip:"yes",
 					showReflection:"yes",
 					reflectionHeight:60,
 					reflectionDistance:0,
-					reflectionOpacity:.2,
+					reflectionOpacity:.4,
 												
 					//controls settings
 					slideshowDelay:5000,
@@ -90,7 +95,7 @@
 					categoriesMenuMaxWidth:700,
 					categoriesMenuOffset:25,
 					categoryColorNormal:"#999999",
-					categoryColorSelected:"#000000",
+					categoryColorSelected:"#FFFFFF",
 												
 					//lightbox settings
 					addLightBoxKeyboardSupport:"yes",
@@ -113,13 +118,46 @@
 					lightBoxSlideShowDelay:4
 				});
 			});
+
+			function gotoNextCategory()
+			{
+				coverflow.switchCategory(coverflow.getCurrentCategoryId() + 1);
+			}
+			
+			function gotoNextThumb()
+			{
+				coverflow.gotoThumb(coverflow.getCurrentThumbId() + 1);
+			}
+			
+			function gotoPrevThumb()
+			{
+				coverflow.gotoThumb(coverflow.getCurrentThumbId() - 1);
+			}
+			
+			function startStopSlideshow()
+			{
+				if (coverflow.isSlideshowPlaying())
+				{
+					coverflow.stopSlideshow();
+				}
+				else
+				{
+					coverflow.startSlideshow();
+				}
+			}
 		</script>
 	</head>
 
 	<body>
 		<!-- div used as a holder for the coverflow -->
 		<div id="myDiv"></div>
-
+		
+		<!-- API buttons -->
+		<button onclick="gotoNextCategory()">Goto next category</button>
+		<button onclick="gotoNextThumb()">Goto next thumb</button>
+		<button onclick="gotoPrevThumb()">Goto prev thumb</button>
+		<button onclick="startStopSlideshow()">Start/stop slideshow</button>
+	
 		<!-- coverflow data -->
 		<ul id="coverflowData" style="display: none;">
 			
@@ -127,7 +165,7 @@
 			<ul data-cat="+ Category one">
 				<ul>
 					<li data-type="link" data-url="http://www.google.com" data-target="_blank"></li>
-					<li data-thumbnail-path="load/thumbnails/1.jpg" data-thumbnail-width="280" data-thumbnail-height="380"></li>
+					<li data-thumbnail-path="load/thumbnails/1.jpg"></li>
 					<li data-thumbnail-text="">
 						<p class="largeLabel">CUSTOM PRESS THUMBNAIL ACTION</p>
 						<p class="smallLabel">When a thumbnail is pressed the coverflow can open a browser window or the lightbox.</p>
@@ -140,7 +178,7 @@
 			
 				<ul>
 					<li data-type="media" data-url="load/images/2.jpg"></li>
-					<li data-thumbnail-path="load/thumbnails/2.jpg" data-thumbnail-width="280" data-thumbnail-height="380"></li>
+					<li data-thumbnail-path="load/thumbnails/2.jpg"></li>
 					<li data-thumbnail-text="">
 						<p class="largeLabel">RESPONSIVE LAYOUT</p>
 						<p class="smallLabel">The coverflow has responsive layout.</p>
@@ -153,7 +191,7 @@
 				
 				<ul>
 					<li data-type="media" data-width="640" data-height="420" data-url="http://vimeo.com/83759300"></li>
-					<li data-thumbnail-path="load/thumbnails/6.jpg" data-thumbnail-width="380" data-thumbnail-height="280"></li>
+					<li data-thumbnail-path="load/thumbnails/3.jpg"></li>
 					<li data-thumbnail-text="">
 						<p class="largeLabel">2D FALLBACK FOR OLDER BROWSERS LIKE IE7/8</p>
 						<p class="smallLabel">On a older browser that does not have 3D support the coverflow will display in a 2D format.</p>
@@ -165,8 +203,17 @@
 				</ul>
 				
 				<ul>
+					<li data-type="link" data-url="http://www.google.com" data-target="_blank"></li>
+					<li data-thumbnail-path="load/thumbnails/4.jpg"></li>
+						<li data-thumbnail-text="">
+						<p class="largeLabel">GREAT PERFORMANCE ON MOBILE DEVICES</p>
+						<p class="smallLabel">This coverflow is using the GPU (hardware acceleration).</p>
+					</li>
+				</ul>
+
+				<ul>
 					<li data-type="media" data-width="640" data-height="420" data-url="http://www.youtube.com/watch?v=89rnIwCURC8"></li>
-					<li data-thumbnail-path="load/thumbnails/3.jpg" data-thumbnail-width="280" data-thumbnail-height="380"></li>
+					<li data-thumbnail-path="load/thumbnails/5.jpg"></li>
 					<li data-thumbnail-text="">
 						<p class="largeLabel">VIMEO AND YOUTUBE SUPPORT</p>
 						<p class="smallLabel">The coverflow lightbox can load and play videos from youtube or vimeo easily.</p>
@@ -174,58 +221,6 @@
 					<li data-info="">
 						<p class="mediaDescriptionHeader">VIMEO AND YOUTUBE SUPPORT.</p>
 						<p class="mediaDescriptionText">All you have to do is to include the link from YouTube or Vimeo video that you want to display and the lightbox will display and play your video. The size (width and height) of each video can be set easily.</p>
-					</li>
-				</ul>
-
-				<ul>
-					<li data-type="iframe" data-width="800" data-height="550" data-url="http://www.bing.com/"></li>
-					<li data-thumbnail-path="load/thumbnails/7.jpg" data-thumbnail-width="380" data-thumbnail-height="280"></li>
-					<li data-thumbnail-text="">
-						<p class="largeLabel">IFRAME SUPPORT!</p>
-						<p class="smallLabel">The lightbox can load a HTML page and display it with ease.</p>
-					</li>
-					<li data-info="">
-						<p class="mediaDescriptionHeader">IFRAME SUPPORT!</p>
-						<p class="mediaDescriptionText">The lightbox can load a HTML page and display it with ease. All you have to do is to include the link of the HTML page and the lightbox will display it. The HTML page size (width and height) can be easily set.</p>
-					</li>
-				</ul>
-
-				<ul>
-					<li data-type="media" data-url="load/images/1.jpg"></li>
-					<li data-thumbnail-path="load/thumbnails/8.jpg" data-thumbnail-width="380" data-thumbnail-height="280"></li>
-					<li data-thumbnail-text="">
-						<p class="largeLabel">RESPONSIVE LAYOUT</p>
-						<p class="smallLabel">The coverflow has responsive layout.</p>
-					</li>
-					<li data-info="">
-						<p class="mediaDescriptionHeader">RESPONSIVE LAYOUT.</p>
-						<p class="mediaDescriptionText">The coverflow has responsive layout, basically it has an adaptable layout which makes it the perfect candidate for any type of project.</p>
-					</li>
-				</ul>
-				
-				<ul>
-					<li data-type="link" data-url="http://www.google.com" data-target="_blank"></li>
-					<li data-thumbnail-path="load/thumbnails/4.jpg" data-thumbnail-width="280" data-thumbnail-height="380"></li>
-					<li data-thumbnail-text="">
-						<p class="largeLabel">CUSTOM PRESS THUMBNAIL ACTION</p>
-						<p class="smallLabel">When a thumbnail is pressed the coverflow can open a browser window or the lightbox.</p>
-					</li>
-					<li data-info="">
-						<p class="mediaDescriptionHeader">CUSTOM PRESS THUMBNAIL ACTION.</p>
-						<p class="mediaDescriptionText">When a thumbnail is pressed the coverflow can open a browser window or the lightbox.</p>
-					</li>
-				</ul>
-				
-				<ul>
-					<li data-type="media" data-width="640" data-height="420" data-url="http://vimeo.com/83759300"></li>
-					<li data-thumbnail-path="load/thumbnails/5.jpg" data-thumbnail-width="280" data-thumbnail-height="380"></li>
-					<li data-thumbnail-text="">
-						<p class="largeLabel">2D FALLBACK FOR OLDER BROWSERS LIKE IE7/8</p>
-						<p class="smallLabel">On a older browser that does not have 3D support the coverflow will display in a 2D format.</p>
-					</li>
-					<li data-info="">
-						<p class="mediaDescriptionHeader">2D FALLBACK FOR OLDER BROWSERS LIKE IE7/8.</p>
-						<p class="mediaDescriptionText">On a older browser that does not have 3D support the coverflow will display in a 2D format..</p>
 					</li>
 				</ul>
 				
@@ -236,7 +231,7 @@
 			<ul data-cat="+ Category two">
 				<ul>
 					<li data-type="link" data-url="http://www.google.com" data-target="_blank"></li>
-					<li data-thumbnail-path="load/thumbnails/1.jpg" data-thumbnail-width="280" data-thumbnail-height="380"></li>
+					<li data-thumbnail-path="load/thumbnails/1.jpg"></li>
 					<li data-thumbnail-text="">
 						<p class="largeLabel">CUSTOM PRESS THUMBNAIL ACTION</p>
 						<p class="smallLabel">When a thumbnail is pressed the coverflow can open a browser window or the lightbox.</p>
@@ -249,7 +244,7 @@
 			
 				<ul>
 					<li data-type="media" data-url="load/images/2.jpg"></li>
-					<li data-thumbnail-path="load/thumbnails/2.jpg" data-thumbnail-width="280" data-thumbnail-height="380"></li>
+					<li data-thumbnail-path="load/thumbnails/2.jpg"></li>
 					<li data-thumbnail-text="">
 						<p class="largeLabel">RESPONSIVE LAYOUT</p>
 						<p class="smallLabel">The coverflow has responsive layout.</p>
@@ -262,7 +257,7 @@
 				
 				<ul>
 					<li data-type="media" data-width="640" data-height="420" data-url="http://vimeo.com/83759300"></li>
-					<li data-thumbnail-path="load/thumbnails/6.jpg" data-thumbnail-width="380" data-thumbnail-height="280"></li>
+					<li data-thumbnail-path="load/thumbnails/3.jpg"></li>
 					<li data-thumbnail-text="">
 						<p class="largeLabel">2D FALLBACK FOR OLDER BROWSERS LIKE IE7/8</p>
 						<p class="smallLabel">On a older browser that does not have 3D support the coverflow will display in a 2D format.</p>
