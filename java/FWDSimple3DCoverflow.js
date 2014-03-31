@@ -489,7 +489,7 @@
                 this.screen.style.padding = "0px";
                 this.screen.style.maxWidth = "none";
                 this.screen.style.maxHeight = "none";
-                this.screen.style.border = "none";
+                this.screen.style.border = "none"; //todas las fotos + reflections
                 this.screen.style.lineHeight = "1";
                 this.screen.style.backgroundColor = "transparent";
                 this.screen.style.backfaceVisibility = "hidden";
@@ -929,7 +929,7 @@
                 this.screen.style.padding = "0px";
                 this.screen.style.maxWidth = "none";
                 this.screen.style.maxHeight = "none";
-                this.screen.style.border = "none";
+                this.screen.style.border = "none"; //todos los elementos
                 this.screen.style.lineHeight = "1";
                 this.screen.style.backgroundColor = "transparent";
                 this.screen.style.backfaceVisibility = "hidden";
@@ -2211,9 +2211,9 @@
                 e.allowfullscreen = true;
                 if (r.type_str == t.YOUTUBE) {
                     if (r.videoAutoPlay_bl) {
-                        e.src = "http://www.youtube.com/embed/" + r.videoIdOrIframeUrl + "?wmode=transparent&autoplay=1"
+                        e.src = "https://www.youtube.com/embed/" + r.videoIdOrIframeUrl + "?wmode=transparent&autoplay=1"
                     } else {
-                        e.src = "http://www.youtube.com/embed/" + r.videoIdOrIframeUrl + "?wmode=transparent"
+                        e.src = "https://www.youtube.com/embed/" + r.videoIdOrIframeUrl + "?wmode=transparent"
                     }
                 } else if (r.type_str == t.VIMEO) {
                     if (r.videoAutoPlay_bl) {
@@ -10457,7 +10457,7 @@
                 r.timerButtonTextDO.getStyle().textRendering = "optimizeLegibility";
                 r.timerButtonTextDO.getStyle().fontFamily = "Arial, Helvetica, sans-serif";
                 r.timerButtonTextDO.getStyle().fontSize = "10px";
-                r.timerButtonTextDO.getStyle().color = n.slideshowTimerColor;
+                r.timerButtonTextDO.getStyle().color = "transparent";/*n.slideshowTimerColor;*/
                 if (r.curSeconds < 10) r.timerButtonTextDO.setInnerHTML("0" + r.curSeconds);
                 else r.timerButtonTextDO.setInnerHTML(r.curSeconds);
                 r.setTextPositionId = setTimeout(r.setTextPosition, 10)

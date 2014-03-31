@@ -24,3 +24,11 @@
 	top: -71px;
 	border: none;
 }
+.foto{
+	border:none;
+}
+.foto:hover{
+	box-shadow: 10px 10px 5px #888888;
+	border-style:solid;
+border-width:5px;
+}

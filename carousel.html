@@ -1,243 +1,408 @@
+<!DOCTYPE html>
 <html>
 
+
+
 	<head>
+
 		<link rel="stylesheet" type="text/css" href="css/estilos.css" />
-		<link href='http://fonts.googleapis.com/css?family=Roboto:400,300,700' rel='stylesheet' type='text/css'>
+
+		<link href='https://fonts.googleapis.com/css?family=Roboto:400,300,700' rel='stylesheet' type='text/css'>
+
 		<!-- Imports required for the css and js files -->
+
 		<link rel="stylesheet" type="text/css" href="load/skin_allsizes_white.css"/>
+
 		<script type="text/javascript" src="java/FWDSimple3DCoverflow.js"></script>
+		<script type="text/javascript" src="java/jquery-2.0.0.min.js"></script>
+
 		<!-- Setup the coverflow (all settings are explained in detail in the documentation files) -->
+
 		<script type="text/javascript">
+
 			FWDUtils.onReady(function(){
+
 				var coverflow = new FWDSimple3DCoverflow({
+
 					//required settings
+
 					coverflowHolderDivId:"myDiv",
+
 					coverflowDataListDivId:"coverflowData",
+
 					displayType:"responsive",
+
 					autoScale:"no",
+
 					coverflowWidth:800,
+
 					coverflowHeight:240,
+
 					skinPath:"load/skin_white",
+
 					
+
 					//main settings
+
 					backgroundColor:"",
+
 					backgroundImagePath:"",
+
 					backgroundRepeat:"repeat-x",
+
 					showDisplay2DAlways:"no",
+
 					coverflowStartPosition:"center",
+
 					coverflowTopology:"dualsided",
+
 					coverflowXRotation:0,
+
 					coverflowYRotation:0,
+
 					numberOfThumbnailsToDisplayLeftAndRight:"all",
+
 					showContextMenu:"no",
+
 												
+
 					//thumbnail settings
+
 					thumbnailWidth:200,
+
 					thumbnailHeight:260,
+
 					thumbnailXOffset3D:80,
+
 					thumbnailXSpace3D:80, //Espacio entre thumbnails
+
 					thumbnailZOffset3D:400, //Zoom thumbnails (menos es más)
+
 					thumbnailZSpace3D:0,
+
 					thumbnailYAngle3D:70,
+
 					thumbnailXOffset2D:20,
+
 					thumbnailXSpace2D:30,
+
 					thumbnailHoverOffset:100,
+
 					thumbnailBorderSize:0,
+
 					thumbnailBackgroundColor:"#083E7C",
+
 					thumbnailBorderColor1:"#FFFFFF",
+
 					thumbnailBorderColor2:"#FFFFFF",
+
 					transparentImages:"no",
+
 					thumbnailsAlignment:"bottom",
+
 					maxNumberOfThumbnailsOnMobile:13,
+
 					showThumbnailsGradient:"yes",
+
 					thumbnailGradientDirection:"left",
+
 					thumbnailGradientColor1:"rgba(255, 255, 255, 0.5)",
+
 					thumbnailGradientColor2:"rgba(255, 255, 255, 0)",
+
 					showText:"no",
+
 					textOffset:10,
+
 					showThumbnailBoxShadow:"yes",
+
 					thumbnailBoxShadowCss:"0px 2px 2px #BBBBBB",
+
 					showTooltip:"yes",
+
 					dynamicTooltip:"yes",
+
 					showReflection:"yes",
+
 					reflectionHeight:10,
+
 					reflectionDistance:0,
-					reflectionOpacity:.2,
+
+					reflectionOpacity:.1,
+
 												
+
 					//controls settings
-					slideshowDelay:5000,
-					autoplay:"no",
+
+					slideshowDelay:3000,
+
+					autoplay:"yes",
+
 					disableNextAndPrevButtonsOnMobile:"no",
+
 					controlsMaxWidth:100,
+
 					slideshowTimerColor:"#FFFFFF",
+
 					controlsPosition:"bottom",
+
 					controlsOffset:15,
+
 					showPrevButton:"no",
+
 					showNextButton:"no",
-					showSlideshowButton:"no",
+
+					showSlideshowButton:"yes",
+
 					showScrollbar:"no",
+
 					disableScrollbarOnMobile:"yes",
+
 					enableMouseWheelScroll:"yes",
+
 					scrollbarHandlerWidth:200,
+
 					scrollbarTextColorNormal:"#000000",
+
 					scrollbarTextColorSelected:"#FFFFFF",
+
 					addKeyboardSupport:"yes",
+
 												
+
 					//categories settings
+
 					showCategoriesMenu:"no",
+
 					startAtCategory:1,
+
 					categoriesMenuMaxWidth:700,
+
 					categoriesMenuOffset:25,
+
 					categoryColorNormal:"#999999",
+
 					categoryColorSelected:"#000000",
+
 												
+
 					//lightbox settings
+
 					addLightBoxKeyboardSupport:"yes",
+
 					showLightBoxNextAndPrevButtons:"yes",
+
 					showLightBoxZoomButton:"yes",
+
 					showLightBoxInfoButton:"no",
+
 					showLighBoxSlideShowButton:"yes",
+
 					showLightBoxInfoWindowByDefault:"no",
+
 					slideShowAutoPlay:"no",
+
 					lightBoxVideoAutoPlay:"yes",
+
 					lightBoxBackgroundColor:"",
+
 					lightBoxInfoWindowBackgroundColor:"#FFFFFF",
+
 					lightBoxItemBorderColor1:"#fcfdfd",
+
 					lightBoxItemBorderColor2:"#e4FFe4",
+
 					lightBoxItemBackgroundColor:"#333333", //video
+
 					lightBoxMainBackgroundOpacity:.8,
+
 					lightBoxInfoWindowBackgroundOpacity:.9,
+
 					lightBoxBorderSize:0,
+
 					lightBoxBorderRadius:0,
+
 					lightBoxSlideShowDelay:4
+
 				});
+
 			});
+
 		</script>
 	</head>
+	<script>
+			/*$(document).ready(function(){
+				$('#slider').on('mouseout',function(){
+					$('#fondo').on("click",function(){
+						$('#fondo').fadeOut('slow');
+					});
+				}); 
+			});*/
+	</script>
+
 
 	<body>
 
+
+
 			<!-- div used as a holder for the coverflow -->
+
 			<div id="myDiv"></div>
+
 			<!-- coverflow data -->
 
+
+
 		<ul id="coverflowData" style="display: none;">
+
 			
+
 			<!-- category  -->
+
 			<ul data-cat="Dove">
+
 				<ul>
+
 					<!-- Lightbox -->
-					<li data-type="media" data-width="640" data-height="420" data-url="http://www.youtube.com/watch?v=hELA0wY7nM0"></li>
-					<li data-thumbnail-path="load/thumbnails/6.jpg" data-thumbnail-width="280" data-thumbnail-height="180"></li>
+
+					<li data-type="media" data-width="640" data-height="420" data-url="https://www.youtube.com/watch?v=EBbdY33kIG0&list=UUTQBqvegq17NJH9Ru71ce5g"></li>
+
+					<li class="foto" data-thumbnail-path="load/thumbnails/mariana.jpg" data-thumbnail-width="280" data-thumbnail-height="180"></li>
+
 					<li data-thumbnail-text="">
-						<p class="largeLabel">Video 1</p>
-						<p class="smallLabel">Video 1</p>
-					</li>
-					<li data-info="">
-						<p class="mediaDescriptionHeader">VIMEO AND YOUTUBE SUPPORT.</p>
-						<p class="mediaDescriptionText">All you have to do is to include the link from YouTube or Vimeo video that you want to display and the lightbox will display and play your video. The size (width and height) of each video can be set easily.</p>
+
+						<p class="largeLabel">Mariana Su&aacute;rez</p>
+
+						<p class="smallLabel">Empresaria</p>
+
 					</li>
 				</ul>
+
 				<ul>
-					<li data-type="media" data-width="640" data-height="420" data-url="http://www.youtube.com/watch?v=hELA0wY7nM0"></li>
-					<li data-thumbnail-path="load/thumbnails/8.jpg" data-thumbnail-width="280" data-thumbnail-height="180"></li>
+
+					<li data-type="media" data-width="640" data-height="420" data-url="https://www.youtube.com/watch?v=9mFrGpMQMW0&list=UUTQBqvegq17NJH9Ru71ce5g"></li>
+
+					<li data-thumbnail-path="load/thumbnails/victoria.jpg" data-thumbnail-width="280" data-thumbnail-height="180"></li>
+
 					<li data-thumbnail-text="">
-						<p class="largeLabel">Video 2</p>
-						<p class="smallLabel">Video 2</p>
+
+						<p class="largeLabel">Ana Victoria Tach&eacute;</p>
+
+						<p class="smallLabel">Directora Editorial Cosmopolitan</p>
+
 					</li>
-					<li data-info="">
-						<p class="mediaDescriptionHeader">VIMEO AND YOUTUBE SUPPORT.</p>
-						<p class="mediaDescriptionText">All you have to do is to include the link from YouTube or Vimeo video that you want to display and the lightbox will display and play your video. The size (width and height) of each video can be set easily.</p>
-					</li>
+
 				</ul>
+
 				<ul>
-					<li data-type="media" data-width="640" data-height="420" data-url="http://www.youtube.com/watch?v=hELA0wY7nM0"></li>
-					<li data-thumbnail-path="load/thumbnails/11.jpg" data-thumbnail-width="280" data-thumbnail-height="180"></li>
+
+					<li data-type="media" data-width="640" data-height="420" data-url="https://www.youtube.com/watch?v=Y-OBLokSQ1w&list=UUTQBqvegq17NJH9Ru71ce5g"></li>
+
+					<li data-thumbnail-path="load/thumbnails/brisa.jpg" data-thumbnail-width="280" data-thumbnail-height="180"></li>
+
 					<li data-thumbnail-text="">
-						<p class="largeLabel">Video 3</p>
-						<p class="smallLabel">Video 3</p>
+
+						<p class="largeLabel">Brisa Topete</p>
+
+						<p class="smallLabel">Chef</p>
+
 					</li>
-					<li data-info="">
-						<p class="mediaDescriptionHeader">VIMEO AND YOUTUBE SUPPORT.</p>
-						<p class="mediaDescriptionText">All you have to do is to include the link from YouTube or Vimeo video that you want to display and the lightbox will display and play your video. The size (width and height) of each video can be set easily.</p>
-					</li>
+
 				</ul>
+
 				<ul>
-					<li data-type="media" data-width="640" data-height="420" data-url="http://www.youtube.com/watch?v=hELA0wY7nM0"></li>
-					<li data-thumbnail-path="load/thumbnails/12.jpg" data-thumbnail-width="280" data-thumbnail-height="180"></li>
+
+					<li data-type="media" data-width="640" data-height="420" data-url="https://www.youtube.com/watch?v=x6O2-AA3BBk&list=UUTQBqvegq17NJH9Ru71ce5g"></li>
+
+					<li data-thumbnail-path="load/thumbnails/genevieve.jpg" data-thumbnail-width="280" data-thumbnail-height="180"></li>
+
 					<li data-thumbnail-text="">
-						<p class="largeLabel">Video 4</p>
-						<p class="smallLabel">Video 4</p>
+
+						<p class="largeLabel">Genevieve Fern&aacute;ndez</p>
+
+						<p class="smallLabel">Directora Editorial Readers Digest M&eacute;xico</p>
+
 					</li>
-					<li data-info="">
-						<p class="mediaDescriptionHeader">VIMEO AND YOUTUBE SUPPORT.</p>
-						<p class="mediaDescriptionText">All you have to do is to include the link from YouTube or Vimeo video that you want to display and the lightbox will display and play your video. The size (width and height) of each video can be set easily.</p>
-					</li>
+
 				</ul>
+
 				<ul>
-					<li data-type="media" data-width="640" data-height="420" data-url="http://www.youtube.com/watch?v=hELA0wY7nM0"></li>
-					<li data-thumbnail-path="load/thumbnails/14.jpg" data-thumbnail-width="280" data-thumbnail-height="180"></li>
+
+					<li data-type="media" data-width="640" data-height="420" data-url="https://www.youtube.com/watch?v=yM0gbn6EzvM&list=UUTQBqvegq17NJH9Ru71ce5g"></li>
+
+					<li data-thumbnail-path="load/thumbnails/sayda.jpg" data-thumbnail-width="280" data-thumbnail-height="180"></li>
+
 					<li data-thumbnail-text="">
-						<p class="largeLabel">Video 5</p>
-						<p class="smallLabel">Video 5</p>
+
+						<p class="largeLabel">Sayda Del R&iacute;o</p>
+
+						<p class="smallLabel">Subdirecci&oacute;n T&eacute;cnico Deportiva</p>
+
 					</li>
-					<li data-info="">
-						<p class="mediaDescriptionHeader">VIMEO AND YOUTUBE SUPPORT.</p>
-						<p class="mediaDescriptionText">All you have to do is to include the link from YouTube or Vimeo video that you want to display and the lightbox will display and play your video. The size (width and height) of each video can be set easily.</p>
-					</li>
+
 				</ul>
+
 				<ul>
-					<li data-type="media" data-width="640" data-height="420" data-url="http://www.youtube.com/watch?v=hELA0wY7nM0"></li>
-					<li data-thumbnail-path="load/thumbnails/17.jpg" data-thumbnail-width="280" data-thumbnail-height="180"></li>
+
+					<li data-type="media" data-width="640" data-height="420" data-url="https://www.youtube.com/watch?v=am4B_TYT7kc&list=UUTQBqvegq17NJH9Ru71ce5g"></li>
+
+					<li data-thumbnail-path="load/thumbnails/ana.jpg" data-thumbnail-width="280" data-thumbnail-height="180"></li>
+
 					<li data-thumbnail-text="">
-						<p class="largeLabel">Video 6</p>
-						<p class="smallLabel">Video 6</p>
+
+						<p class="largeLabel">Ana V&aacute;zquez</p>
+
+						<p class="smallLabel">Vlogger "CoolBrush"</p>
+
 					</li>
-					<li data-info="">
-						<p class="mediaDescriptionHeader">VIMEO AND YOUTUBE SUPPORT.</p>
-						<p class="mediaDescriptionText">All you have to do is to include the link from YouTube or Vimeo video that you want to display and the lightbox will display and play your video. The size (width and height) of each video can be set easily.</p>
-					</li>
+
 				</ul>
+
 				<ul>
-					<li data-type="media" data-width="640" data-height="420" data-url="http://www.youtube.com/watch?v=hELA0wY7nM0"></li>
-					<li data-thumbnail-path="load/thumbnails/6.jpg" data-thumbnail-width="280" data-thumbnail-height="180"></li>
+
+					<li data-type="media" data-width="640" data-height="420" data-url="https://www.youtube.com/watch?v=kGEJA6rEpUg&list=UUTQBqvegq17NJH9Ru71ce5g"></li>
+
+					<li data-thumbnail-path="load/thumbnails/fernanda.jpg" data-thumbnail-width="280" data-thumbnail-height="180"></li>
+
 					<li data-thumbnail-text="">
-						<p class="largeLabel">Video 7</p>
-						<p class="smallLabel">Video 7</p>
+
+						<p class="largeLabel">Mar&iacute;a Fernanda Vaca</p>
+
+						<p class="smallLabel">Relaciones P&uacute;blicas</p>
+
 					</li>
-					<li data-info="">
-						<p class="mediaDescriptionHeader">VIMEO AND YOUTUBE SUPPORT.</p>
-						<p class="mediaDescriptionText">All you have to do is to include the link from YouTube or Vimeo video that you want to display and the lightbox will display and play your video. The size (width and height) of each video can be set easily.</p>
-					</li>
+
 				</ul>
+
 				<ul>
-					<li data-type="media" data-width="640" data-height="420" data-url="http://www.youtube.com/watch?v=hELA0wY7nM0"></li>
-					<li data-thumbnail-path="load/thumbnails/8.jpg" data-thumbnail-width="280" data-thumbnail-height="180"></li>
+
+					<li data-type="media" data-width="640" data-height="420" data-url="https://www.youtube.com/watch?feature=player_embedded&v=NrlNURs2PMI"></li>
+
+					<li data-thumbnail-path="load/thumbnails/mix.jpg" data-thumbnail-width="280" data-thumbnail-height="180"></li>
+
 					<li data-thumbnail-text="">
-						<p class="largeLabel">Video 8</p>
-						<p class="smallLabel">Video 8</p>
+
+						<p class="largeLabel">Mix</p>
+
+						<p class="smallLabel">Todas las experiencias</p>
+
 					</li>
-					<li data-info="">
-						<p class="mediaDescriptionHeader">VIMEO AND YOUTUBE SUPPORT.</p>
-						<p class="mediaDescriptionText">All you have to do is to include the link from YouTube or Vimeo video that you want to display and the lightbox will display and play your video. The size (width and height) of each video can be set easily.</p>
-					</li>
+
+
 				</ul>
-				<ul>
-					<li data-type="media" data-width="640" data-height="420" data-url="http://www.youtube.com/watch?v=hELA0wY7nM0"></li>
-					<li data-thumbnail-path="load/thumbnails/12.jpg" data-thumbnail-width="280" data-thumbnail-height="180"></li>
-					<li data-thumbnail-text="">
-						<p class="largeLabel">Video 9</p>
-						<p class="smallLabel">Video 9</p>
-					</li>
-					<li data-info="">
-						<p class="mediaDescriptionHeader">VIMEO AND YOUTUBE SUPPORT.</p>
-						<p class="mediaDescriptionText">All you have to do is to include the link from YouTube or Vimeo video that you want to display and the lightbox will display and play your video. The size (width and height) of each video can be set easily.</p>
-					</li>
-				</ul>
+
 				
+
+				
+
 			</ul>
+
 			<!-- end  -->
 
+
+
 	</body>
+
+
 
 </html>
